@@ -1,0 +1,36 @@
+.g-bg-blue {
+    background-color: #0170bbc4 !important;
+}
+
+
+.g-mt-20 {
+    margin-top: 1rem !important;
+}
+
+.nav-link {
+    color: #332b9c !important;
+}
+
+.g-bg-main--hover:hover {
+    background-color: #0170bb !important;
+}
+
+.u-block-hover:hover .g-color-primary--hover, .g-color-primary--hover:hover {
+    color: #ddd !important;
+}
+
+.nav-link {
+    color: #f6f5fb !important;
+}
+
+.hs-sub-menu .nav-link {
+    color:#332b9c !important
+}
+
+.list-unstyled .nav-link {
+    color:#332b9c !important
+}
+
+.g-color-gray-dark-v5--hover:hover {
+    color: #052c52 !important;
+}
