@@ -674,10 +674,10 @@ jQuery.extend(true,_R, {
 		
 		// BLOCK ANIMATION ON LAYERS
 		if (_._sfx==="block") 
-			if (_._bmask === undefined) {
-				_._bmask = jQuery('<div class="tp-blockmask"></div>');
-				_._mw.append(_._bmask);
-			}
+			// if (_._bmask === undefined) {
+			// 	_._bmask = jQuery('<div class="tp-blockmask"></div>');
+			// 	_._mw.append(_._bmask);
+			// }
 				
 			
 		_.arrobj = new Object();

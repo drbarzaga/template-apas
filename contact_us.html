@@ -43,6 +43,10 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="global/css/custom.css">
+
+    <!-- JVECTOR MAP -->
+    <link rel="stylesheet" href="global/css/jquery-jvectormap.css">    
+    <!-- END -->
   </head>
 
   <body>
@@ -91,10 +95,7 @@
                         aria-labelledby="nav-link--page">
                       <li class="dropdown-item">
                         <a class="nav-link g-color-text g-font-weight-600" href="overview.html">Overview</a>
-                      </li>
-                      <li class="dropdown-item">
-                        <a class="nav-link g-color-text g-font-weight-600" href="careers.html">Carers</a>
-                      </li>
+                      </li>                     
                     </ul>
                   </li>
                   <!-- End About - Submenu -->
@@ -175,49 +176,38 @@
       <!-- End Header -->
 
       <!-- Map -->
-      <div class="g-pos-rel g-height-500">
-        <div id="gMap" class="js-g-map g-pos-abs w-100 h-100" data-type="custom" data-lat="40.674" data-lng="-73.946" data-zoom="12" data-title="Agency" data-styles="[
-                 [&quot;&quot;, &quot;&quot;, [{&quot;saturation&quot;:-100},{&quot;lightness&quot;:51},{&quot;visibility&quot;:&quot;simplified&quot;}]],
-                 [&quot;&quot;, &quot;labels&quot;, [{&quot;visibility&quot;:&quot;on&quot;}]],
-                 [&quot;water&quot;, &quot;&quot;, [{&quot;color&quot;:&quot;#bac6cb&quot;}]]
-               ]" data-pin="true" data-pin-icon="assets/img/pin.png"></div>
+      <div class="g-pos-rel" style="padding-top: 8rem;">
+        <div id="map" style="width: 100%; height: 500px"></div>
       </div>
       <!-- End -->
 
       <!-- Contact Info -->
-      <div class="text-center g-theme-bg-blue-dark-v1 g-py-80 g-mt-100">
+      <div class="text-center g-theme-bg-blue-dark-v1 g-py-80 g-mt-18">
         <div class="container g-width-780 g-mb-60">
           <div class="text-uppercase g-mb-45">
             <h3 class="u-heading-v2__title g-line-height-1_3 g-font-weight-600 g-mb-minus-10">Contact Us</h3>
-          </div>
-          <p class="mb-0 text-justify">Sed feugiat porttitor nunc, non dignissim ipsum vestibulum in. Donec in blandit dolor. Vivamus a fringilla lorem, vel faucibus ante. Nunc ullamcorper, justo a iaculis elementum, enim orci viverra eros, fringilla porttitor lorem eros vel odio.</p>
+          </div>          
         </div>
 
         <div class="container">
           <div class="row">
-            <div class="col-sm-6 col-md-3 g-px-15 g-py-30 g-py-0--md">
+            <div class="col-sm-6 col-md-4 g-px-15 g-py-30 g-py-0--md">
               <i class="icon-globe d-inline-block g-font-size-50  g-mb-20"></i>
               <h3 class="text-uppercase g-font-size-default  g-letter-spacing-1 g-mb-5">Address</h3>
-              <strong class="g-font-size-default">61 Oxford str., London, 3DG</strong>
+              <strong class="g-font-size-default">6270 NW 37 Ave. Miami, FL, USA</strong>
             </div>
 
-            <div class="col-sm-6 col-md-3 g-brd-top g-brd-top-none g-brd-left--md g-brd-black-opacity-0_4 g-px-15 g-py-30 g-py-0--md">
+            <div class="col-sm-6 col-md-4 g-brd-top g-brd-top-none g-brd-left--md g-brd-black-opacity-0_4 g-px-15 g-py-30 g-py-0--md">
               <i class="icon-call-in d-inline-block g-font-size-50  g-mb-20"></i>
               <h3 class="text-uppercase g-font-size-default  g-letter-spacing-1 g-mb-5">Phone number</h3>
-              <strong class="g-font-size-default">1-800-643-4500</strong>
+              <strong class="g-font-size-default">(786) 310 0880</strong>
             </div>
 
-            <div class="col-sm-6 col-md-3 g-brd-top g-brd-top-none g-brd-left--md g-brd-black-opacity-0_4 g-px-15 g-py-30 g-py-0--md">
+            <div class="col-sm-6 col-md-4 g-brd-top g-brd-top-none g-brd-left--md g-brd-black-opacity-0_4 g-px-15 g-py-30 g-py-0--md">
               <i class="icon-envelope d-inline-block g-font-size-50  g-mb-20"></i>
               <h3 class="text-uppercase g-font-size-default  g-letter-spacing-1 g-mb-5">Email</h3>
-              <a class="g-font-size-default" href="mailto:info@unify.com"><strong>mail@htmlstream.com</strong></a>
-            </div>
-
-            <div class="col-sm-6 col-md-3 g-brd-top g-brd-top-none g-brd-left--md g-brd-black-opacity-0_4 g-px-15 g-py-30 g-py-0--md">
-              <i class="icon-earphones-alt d-inline-block g-font-size-50  g-mb-20"></i>
-              <h3 class="text-uppercase g-font-size-default  g-letter-spacing-1 g-mb-5">Toll free</h3>
-              <strong class="g-font-size-default">@unify</strong>
-            </div>
+              <a class="g-font-size-default" href="mailto:info@unify.com"><strong>Cmontiel@Apas1.Com</strong></a>
+            </div>            
           </div>
         </div>
       </div>
@@ -235,8 +225,7 @@
           <div class="g-brd-primary g-mb-20">
             <h3 class="text-uppercase u-heading-v2__title g-line-height-1_3 g-font-weight-600 g-font-size-26 mb-0">Send Message</h3>
           </div>
-          <p class="g-mb-90 text-justify">Mauris sodales tellus vel felis dapibus, sit amet porta nibh egestas. Sed dignissim tellus quis sapien sagittis cursus. Cras porttitor auctor sapien eu tempus nunc placerat</p>
-
+          
           <form>
             <div class="row">
               <div class="col-md-6 form-group g-mb-30">
@@ -291,7 +280,7 @@
                   <img style="width: 220px;height: 70px;" src="assets/img/logo/logo-white.png" alt="Logo">
                 </a>
                 <!-- End Logo -->
-                <p style="margin-left: 12px">Leader in Aviation Services</p>
+                <p style="margin-left: 12px">A Leader in Aviation Services.<br>MRO Solutions</p>
               </div>
 
               <div class="col-6 col-md-3 g-mb-30">
@@ -361,7 +350,7 @@
                 <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-10">
                   <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Contact Us</h2>
                 </div>
-                <address class="g-font-size-13 g-color-gray-dark-v3 g-font-weight-600 g-line-height-2 mb-0">470 Lucy Forks,<br>Patriciafurt, YC7B 3UT<br>WY10037, Great Britain</address>
+                <address class="g-font-size-13 g-color-gray-dark-v3 g-font-weight-600 g-line-height-2 mb-0">6270 NW 37 Ave<br>Miami, FL, USA<br><i class="fa fa-phone"></i> Phone: (786) 310 0880<br><i class="fa fa-envelope"></i> Mail: Cmontiel@Apas1.Com<br></address>
               </div>
             </div>
           </div>
@@ -371,7 +360,7 @@
           <div class="container g-pt-30">
             <div class="row align-items-center">
               <div class="col-md-6 g-mb-30">
-                <p class="d-inline-block align-middle g-font-size-13 mb-0">&copy; 2018 AGL Aerospace. All Rights Reserved.</p>
+                <p class="d-inline-block align-middle g-font-size-13 mb-0">&copy; 2018 APAS. All Rights Reserved.</p>
               </div>
 
               <div class="col-md-6 g-mb-30 text-right">
@@ -450,9 +439,67 @@
     <script src="global/js/components/hs.carousel.js"></script>
     <script src="global/js/components/hs.go-to.js"></script>
     <script src="global/js/components/gmap/hs.map.js"></script>
-
+   
    <!-- JS Customization -->
     <script src="global/js/custom.js"></script>
+    
+    <!-- JVECTOR MAP -->
+    <script src="global/js/jquery-jvectormap.js"></script>
+    <script src="global/js/jvectormap.js"></script>
+    <script src="global/js/abstract-element.js"></script>
+    <script src="global/js/abstract-canvas-element.js"></script>
+    <script src="global/js/abstract-shape-element.js"></script>
+    <script src="global/js/svg-element.js"></script>
+    <script src="global/js/svg-group-element.js"></script>
+    <script src="global/js/svg-canvas-element.js"></script>
+    <script src="global/js/svg-shape-element.js"></script>
+    <script src="global/js/svg-path-element.js"></script>
+    <script src="global/js/svg-circle-element.js"></script>
+    <script src="global/js/map-object.js"></script>
+    <script src="global/js/region.js"></script>
+    <script src="global/js/marker.js"></script>
+    <script src="global/js/vector-canvas.js"></script>
+    <script src="global/js/data-series.js"></script>
+    <script src="global/js/proj.js"></script>
+    <script src="global/js/map.js"></script>
+    <script src="global/js/jquery-jvectormap-world-mill-en.js"></script>
+
+    <script>
+      $(function(){
+        $('#map').vectorMap({
+                map: 'world_mill_en',
+                panOnDrag: false,
+                hoverOpacity: 0.7,
+                hoverColor: false,
+                zoomButtons : false,
+                zoomOnScroll: false,
+                regionStyle: {
+                    initial: {
+                        fill: '#ddd',
+                        'stroke': 'none',
+                        'stroke-width': 0,
+                        'stroke-opacity':0
+                    }
+                },
+                markerStyle: {
+                    initial: {
+                        fill: '#bd2828',
+                        stroke: '#bd2828'
+                    }
+                },
+                backgroundColor: '#ddd',
+                markers: [
+                    {latLng: [25.91, -80.28], name: 'Miami'},
+                ],
+                series: {
+                    regions: [{
+                        normalizeFunction: 'polynomial'
+                    }]
+                }
+            });
+
+      });
+    </script>
 
     <!-- JS Plugins Init. -->
     <script>
