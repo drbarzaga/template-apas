@@ -188,11 +188,18 @@
 
             <!-- CONTENT -->
             <div class="row">
-                <div class="col-md-3">
-                    <img src="assets/img/mro/capabilities.jpg" alt="" style="max-width: 270px;">
+                <div class="col-md-4 text-left">
+                    <form action="" class="form form-horizontal">
+                        <div class="from-group">
+                            <label for="">Search P/N:</label>
+                            <input type="text" id="search_criteria" class="form-control" placeholder="Example: 37A226 - 089">
+                            <a href="#!" id="btn_search" class="btn btn-success btn-block" style="margin-top: 5px;text-transform: uppercase;"><i class="fa fa-search"></i> Search</a>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-md-9">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vitae perspiciatis earum, labore accusamus dolorem quas eos deleniti. Temporibus praesentium mollitia minus in dolorum ipsum assumenda explicabo officia rem voluptatum?</p>
+                <div class="col-md-8">
+                    <label for="">Results</label>
+                    <div id="results"></div>
                 </div>
             </div>  
             <!-- END -->
@@ -362,10 +369,12 @@
 <script src="global/js/components/hs.popup.js"></script>
 <script src="global/js/components/hs.carousel.js"></script>
 <script src="global/js/components/hs.go-to.js"></script>
+<script src="global/js/jquery.matchHeight.js"></script>
 
 <!--- MAP --->
 <script  src="assets/vendor/jquery.easypin.custom/dist/jquery.easypin.js"></script>
 <script  src="global/js/components/hs.map.pin.js"></script>
+s
 
 <!-- JS Customization -->
 <script src="global/js/custom.js"></script>
@@ -399,6 +408,73 @@
 
         // initialization of go to
         $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+
+    $(document).ready(function(){
+        $(document).on('keyup', '#search_criteria', function(){
+            if($(this).val() != "" && $(this).val() != null)
+               $(this).removeClass('error');    
+            else{
+                $(this).addClass('error');
+            }    
+        });   
+
+        $(document).on('click','#btn_search', function(){
+            let searchText = $('#search_criteria').val();
+            if(searchText != null && searchText != ""){
+                $.ajax({
+                    url: 'capabilities.php',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        value: searchText
+                    }
+                })
+                .success(function(result){
+                    let data = JSON.parse(JSON.stringify(result));    
+                    if(data.length){
+                        buildView(data)
+                    }
+                });    
+            }else{
+                $('#search_criteria').addClass('error');
+            }
+        });
+
+        function buildView(data){
+           let columns  = ``; 
+           for(let i=0; i < data.length; i++){
+              columns += `
+                 <div class="col-md-4 match-height">
+                    <div style="background-color: #ddd; border-radius: 5px;padding-bottom:10px;margin-bottom: 10px;padding-left: 5px;padding-top: 3px;padding-right: 5px;">
+                       <div class="match-height-element">
+                         <p style="margin-bottom: 0 !important">
+                            <span><strong>P/N:</strong></span> ${data[i].part_number}
+                         </p>
+                         <p style="padding-top: 5px; border-top: 1px solid #fff;margin-bottom: 0 !important">
+                           <span><strong>Description:</strong></span> ${data[i].description}
+                         </p>
+                         <p style="padding-top: 5px;margin-bottom: 0 !important">
+                           <span><strong>Cond:</strong></span> ${data[i].cond}
+                         </p>
+                       </div>
+                    </div>
+                 </div>
+              `;
+           }
+
+           let html = `
+                <div class="row">
+                    ${columns}
+                </div>
+           `;
+
+
+           $('#results').html(html);
+
+           $('.macth-height').matchHeight();
+           $('.macth-height-element').matchHeight();
+        }    
     });
 </script>
 </body>
