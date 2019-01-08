@@ -451,11 +451,20 @@ s
                          <p style="margin-bottom: 0 !important">
                             <span><strong>P/N:</strong></span> ${data[i].part_number}
                          </p>
+                         <p style="margin-bottom: 0 !important">
+                            <span><strong>Alternate P/N:</strong></span> ${data[i].alternate_pn != null ? data[i].alternate_pn : '--'}
+                         </p>
                          <p style="padding-top: 5px; border-top: 1px solid #fff;margin-bottom: 0 !important">
                            <span><strong>Description:</strong></span> ${data[i].description}
                          </p>
                          <p style="padding-top: 5px;margin-bottom: 0 !important">
-                           <span><strong>Cond:</strong></span> ${data[i].cond}
+                           <span><strong>Manufacturer:</strong></span>${data[i].manufacturer != null  ? data[i].manufacturer : '--' }
+                         </p>
+                         <p style="padding-top: 5px;margin-bottom: 0 !important">
+                           <span><strong>Boeing Spec:</strong></span>${data[i].boeing_spec != null  ? data[i].boeing_spec : '--' }
+                         </p>
+                         <p style="padding-top: 5px;margin-bottom: 0 !important">
+                           <span><strong>ATA:</strong></span> ${data[i].ata != null ? data[i].ata : '--'}
                          </p>
                        </div>
                     </div>
