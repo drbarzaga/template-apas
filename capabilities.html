@@ -200,6 +200,9 @@
                 <div class="col-md-8">
                     <label for="">Results</label>
                     <div id="results"></div>
+                    <div id="not_results" style="display: none">
+                        <h3>We don't have capability for that part number</h3>      
+                    </div>
                 </div>
             </div>  
             <!-- END -->
@@ -421,7 +424,8 @@ s
 
         $(document).on('click','#btn_search', function(){
             let searchText = $('#search_criteria').val();
-            if(searchText != null && searchText != ""){
+            $('#not_results').hide();
+            if(searchText != null && searchText != ""){                                
                 $.ajax({
                     url: 'capabilities.php',
                     type: 'GET',
@@ -430,11 +434,16 @@ s
                         value: searchText
                     }
                 })
-                .success(function(result){
+                .success(function(result){   
+                    debugger;                 
                     let data = JSON.parse(JSON.stringify(result));    
                     if(data.length){
                         buildView(data)
+                    }else{
+                        $('#not_results').show();
                     }
+                }).fail(function(error){                                       
+                    $('#not_results').show();
                 });    
             }else{
                 $('#search_criteria').addClass('error');
