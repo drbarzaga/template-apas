@@ -68,7 +68,7 @@
         <div class="u-header__section g-bg-white g-transition-0_3">
 
             <!-- NAVIGATION BAR -->
-            <nav class="js-mega-menu navbar navbar-expand-lg g-pa-0" style="background-color: #0076bcd9">
+            <nav class="js-mega-menu navbar navbar-expand-lg g-pa-0" style="background-color: #268ac6">
                 <div class="container-fluid">
                     <!-- Logo -->
                     <a class="navbar-brand g-pl-15" href="index.html">
@@ -217,7 +217,7 @@
                     <label for="">Results</label>
                     <div id="results"></div>
                     <div id="not_results" style="display: none">
-                        <h3>We don't have capability for that part number</h3>      
+                        <h3 class="text-danger">We don't have capability for that part number</h3>      
                     </div>
                 </div>
             </div>  
@@ -451,7 +451,6 @@ s
                     }
                 })
                 .success(function(result){   
-                    debugger;                 
                     let data = JSON.parse(JSON.stringify(result));    
                     if(data.length){
                         buildView(data)
