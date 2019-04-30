@@ -236,14 +236,14 @@
                     <h3 class="text-uppercase u-heading-v2__title g-line-height-1_3 g-font-weight-600 g-font-size-26 mb-0" style="font-weight:lighter !important;">Send Message</h3>
                   </div>
                   
-                  <form>
+                  <form method="post" action="send_mail_contact.php">
                     <div class="row">
                       <div class="col-md-6 form-group g-mb-30">
                         <div class="input-group">
                           <div class="input-group-prepend">
                             <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-gray-dark-v5 g-bg-white"><i class="icon-communication-128 u-line-icon-pro"></i></span>
                           </div>
-                          <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover g-py-15 g-px-15" type="text" placeholder="Name">
+                          <input name="name" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover g-py-15 g-px-15" type="text" placeholder="Name">
                         </div>
                       </div>
               
@@ -252,7 +252,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-gray-dark-v5 g-bg-white"><i class="icon-hotel-restaurant-124 u-line-icon-pro u-line-icon-pro"></i></span>
                           </div>
-                          <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover g-py-15 g-px-15" type="email" placeholder="Email">
+                          <input name="email" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover g-py-15 g-px-15" type="email" placeholder="Email">
                         </div>
                       </div>
               
@@ -261,12 +261,12 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-gray-dark-v5 g-bg-white"><i class="icon-communication-128 u-line-icon-pro"></i></span>
                           </div>
-                          <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover g-py-15 g-px-15" type="text" placeholder="Subject">
+                          <input name="subject" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover g-py-15 g-px-15" type="text" placeholder="Subject">
                         </div>
                       </div>
               
                       <div class="col-md-12 form-group g-mb-30">
-                        <textarea id="inputGroup1_4" class="form-control g-resize-none g-font-size-14 g-placeholder-inherit g-rounded-4 g-px-10 g-py-13 g-transition-0_2 g-transition--ease-in" rows="6" placeholder="Message"></textarea>
+                        <textarea name="message" id="inputGroup1_4" class="form-control g-resize-none g-font-size-14 g-placeholder-inherit g-rounded-4 g-px-10 g-py-13 g-transition-0_2 g-transition--ease-in" rows="6" placeholder="Message"></textarea>
                       </div>
                     </div>
               
