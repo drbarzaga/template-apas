@@ -107,7 +107,7 @@
                                     aria-labelledby="nav-link--page">
                                     <li class="dropdown-item">
                                         <a class="nav-link g-color-text g-font-weight-600" href="overview.html">Overview</a>
-                                    </li>                                    
+                                    </li>
                                 </ul>
                             </li>
                             <!-- End About - Submenu -->
@@ -217,10 +217,10 @@
                     <label for="">Results</label>
                     <div id="results"></div>
                     <div id="not_results" style="display: none">
-                        <h3 class="text-danger">We don't have capability for that part number</h3>      
+                        <h3 class="text-danger">We don't have capability for that part number</h3>
                     </div>
                 </div>
-            </div>  
+            </div>
             <!-- END -->
         </div>
     </div>
@@ -301,7 +301,7 @@
                 <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-10">
                   <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Contact Us</h2>
                 </div>
-                <address class="g-font-size-13 g-color-gray-dark-v3 g-font-weight-600 g-line-height-2 mb-0">6270 NW 37 Ave<br>Miami, FL, USA<br><i class="fa fa-phone"></i> Phone: (786) 310 0880<br><i class="fa fa-envelope"></i> Mail: cmontiel@apas1.com<br></address>
+                <address class="g-font-size-13 g-color-gray-dark-v3 g-font-weight-600 g-line-height-2 mb-0">6270 NW 37 Ave<br>Miami, FL, USA<br><i class="fa fa-phone"></i> Phone: (786) 310 0880<br><i class="fa fa-envelope"></i> Mail: info@apas1.com<br></address>
               </div>
             </div>
           </div>
@@ -432,16 +432,16 @@ s
     $(document).ready(function(){
         $(document).on('keyup', '#search_criteria', function(){
             if($(this).val() != "" && $(this).val() != null)
-               $(this).removeClass('error');    
+               $(this).removeClass('error');
             else{
                 $(this).addClass('error');
-            }    
-        });   
+            }
+        });
 
         $(document).on('click','#btn_search', function(){
             let searchText = $('#search_criteria').val();
             $('#not_results').hide();
-            if(searchText != null && searchText != ""){                                
+            if(searchText != null && searchText != ""){
                 $.ajax({
                     url: 'capabilities.php',
                     type: 'GET',
@@ -450,23 +450,23 @@ s
                         value: searchText
                     }
                 })
-                .success(function(result){   
-                    let data = JSON.parse(JSON.stringify(result));    
+                .success(function(result){
+                    let data = JSON.parse(JSON.stringify(result));
                     if(data.length){
                         buildView(data)
                     }else{
                         $('#not_results').show();
                     }
-                }).fail(function(error){                                       
+                }).fail(function(error){
                     $('#not_results').show();
-                });    
+                });
             }else{
                 $('#search_criteria').addClass('error');
             }
         });
 
         function buildView(data){
-           let columns  = ``; 
+           let columns  = ``;
            for(let i=0; i < data.length; i++){
               columns += `
                  <div class="col-md-4 match-height">
@@ -507,7 +507,7 @@ s
 
            $('.macth-height').matchHeight();
            $('.macth-height-element').matchHeight();
-        }    
+        }
     });
 </script>
 </body>

@@ -1,4 +1,6 @@
 <?php
+
+require 'vendor/autoload.php';
 try{
     if (!isset($_POST['name']) || !isset($_POST['email'])  || !isset($_POST['message'])){
         http_redirect('http://apas1.com');
