@@ -102,7 +102,7 @@
 
                                     <div class="col-md-12 form-group g-mb-30">
                                         <textarea name="message" id="inputGroup1_4" class="form-control g-resize-none g-font-size-14 g-placeholder-inherit g-rounded-4 g-px-10 g-py-13 g-transition-0_2 g-transition--ease-in" rows="6" placeholder="Message"></textarea>
-                                        @if($errors->has('message))
+                                        @if($errors->has('message'))
                                             <div class="text-left">
                                                 <span class="text-danger">{{ $errors->first('message') }}</span>
                                             </div>
