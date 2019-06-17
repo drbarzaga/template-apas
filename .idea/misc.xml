@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/database/migrations/2019_06_07_150632_create_content_article_table.php" />
+    <file url="file://$PROJECT_DIR$/database/migrations/2019_06_07_150633_create_content_article_category_table.php" />
+    <file url="file://$PROJECT_DIR$/database/migrations/2019_06_07_150719_create_content_article_table.php" />
+    <file url="file://$PROJECT_DIR$/database/migrations/2019_06_07_150720_create_content_article_category_table.php" />
+  </component>
+</project>
